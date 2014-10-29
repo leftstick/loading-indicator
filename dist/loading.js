@@ -208,22 +208,26 @@
         $body.style.overflow = 'hidden';
         if (window.addEventListener) {
             window.addEventListener('DOMMouseScroll', wheel, false);
+            window.addEventListener('touchstart', wheel, false);
         }
         window.onmousewheel = document.onmousewheel = wheel;
+        window.ontouchstart = document.ontouchstart = wheel;
     };
 
     var recoverScrollbar = function() {
         $body.style.overflow = lastOverflow;
         if (window.removeEventListener) {
             window.removeEventListener('DOMMouseScroll', wheel, false);
+            window.removeEventListener('touchstart', wheel, false);
         }
         window.onmousewheel = document.onmousewheel = null;
+        window.ontouchstart = document.ontouchstart = null;
     };
 
     var _isRunning = false;
 
     var Loading = {};
-    Loading.version = '1.0.0';
+    Loading.version = '1.0.2';
 
     Loading.enable = function(theme, timeout) {
         var _this = this;
