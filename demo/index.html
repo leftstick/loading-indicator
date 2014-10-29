@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+    <head>
+        <title>DEMO</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="yes"/>
+        <meta name="renderer" content="webkit"/>
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="prism.css">
+        <link rel="stylesheet" type="text/css" href="bower/amazeui/dist/css/amazeui.min.css">
+        <link rel="stylesheet" type="text/css" href="loading.css">
+        <link rel="stylesheet" type="text/css" href="demo.css">
+    </head>
+
+    <body>
+        <div class="get">
+            <div class="am-g">
+                <div class="col-lg-12">
+                    <h1 class="get-title">loading-indicator</h1>
+                    <p>
+                    <a href="https://github.com/leftstick/loading-indicator" class="am-btn am-btn-sm am-btn-secondary">Github Source</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="detail">
+            <div class="am-g am-container">
+                <div class="col-lg-12">
+                    <h2 class="detail-h2">No worry about loading!</h2>
+                    <div class="am-g">
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-adjust am-icon-sm"></i>
+                            double-bounce
+                            </h3>
+<pre><code class="language-javascript">
+$('#double-bounce').on('click', function() {
+    global.Loading.enable('double-bounce', 3000);
+});
+</code></pre>
+                            <button id="double-bounce" type="button" class="am-btn am-btn-secondary am-btn-block" >Try</button>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-anchor am-icon-sm"></i>
+                            rotating-plane
+                            </h3>
+<pre><code class="language-javascript">
+$('#rotating-plane').on('click', function() {
+    global.Loading.enable('rotating-plane', 3000);
+});
+</code></pre>
+                            <button id="rotating-plane" type="button" class="am-btn am-btn-secondary am-btn-block" >Try</button>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-archive am-icon-sm"></i>
+                            wave
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#wave').on('click', function() {
+    global.Loading.enable('wave', 3000);
+});
+</code></pre>
+                            <button id="wave" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-asterisk am-icon-sm"></i>
+                            wandering-cubes
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#wandering-cubes').on('click', function() {
+    global.Loading.enable('wandering-cubes', 3000);
+});
+</code></pre>
+                            <button id="wandering-cubes" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-automobile am-icon-sm"></i>
+                            pulse
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#pulse').on('click', function() {
+    global.Loading.enable('pulse', 3000);
+});
+</code></pre>
+                            <button id="pulse" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-bank am-icon-sm"></i>
+                            chasing-dots
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#chasing-dots').on('click', function() {
+    global.Loading.enable('chasing-dots', 3000);
+});
+</code></pre>
+                            <button id="chasing-dots" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-barcode am-icon-sm"></i>
+                            three-bounce
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#three-bounce').on('click', function() {
+    global.Loading.enable('three-bounce', 3000);
+});
+</code></pre>
+                            <button id="three-bounce" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-beer am-icon-sm"></i>
+                            circle
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#circle').on('click', function() {
+    global.Loading.enable('circle', 3000);
+});
+</code></pre>
+                            <button id="circle" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-bookmark am-icon-sm"></i>
+                            cube-grid
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#cube-grid').on('click', function() {
+    global.Loading.enable('cube-grid', 3000);
+});
+</code></pre>
+                            <button id="cube-grid" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 detail-mb">
+                            <h3 class="detail-h3">
+                            <i class="am-icon-cc am-icon-sm"></i>
+                            wordpress
+                            </h3>
+                            <pre><code class="language-javascript">
+$('#wordpress').on('click', function() {
+    global.Loading.enable('wordpress', 3000);
+});
+</code></pre>
+                            <button id="wordpress" type="button" class="am-btn am-btn-secondary am-btn-block" >try</button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hope">
+            <div class="am-g am-container">
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <h2 class="hope-title">
+                        Show indicator whenever you like!
+                    </h2>
+                </div>
+            </div>
+        </div>
+    <footer class="footer">
+            <p>&copy; 2014 Licensed under <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>. by <a href="http://leftstick.github.io/" target="_blank">Howard.Zuo</a>.</p>
+    </footer>
+    <script type="text/javascript" src="bower/zepto/zepto.min.js"></script>
+    <script type="text/javascript" src="prism.js"></script>
+    <script type="text/javascript" src="loading.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
+</body>
+</html>

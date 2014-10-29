@@ -1,0 +1,27 @@
+{
+  "name": "loading-indicator",
+  "version": "1.0.0",
+  "homepage": "https://github.com/leftstick/loading-indicator",
+  "description": "a simple loading indicator",
+  "keywords": [
+    "loading",
+    "indicator",
+    "mask"
+  ],
+  "authors": [
+    "Howard.Zuo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "demo/bower",
+    "test",
+    "tests",
+    "src"
+  ],
+  "devDependencies": {
+    "amazeui": "~1.0.0"
+  }
+}
