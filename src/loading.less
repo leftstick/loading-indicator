@@ -21,7 +21,7 @@
     min-height: 100vh;
     z-index: 10000;
     opacity: 0.9;
-    .spinner {
+    .ho-spinner {
         width: 80px;
         height: 80px;
         position: relative;
@@ -62,7 +62,7 @@
 
     &.rotating-plane{
         background-color: @rotating-plane-bg-color;
-        .spinner {
+        .ho-spinner {
             background-color: @white;
             animation: rotating-plane 1.2s infinite ease-in-out;
         }
@@ -82,7 +82,7 @@
 
     &.wave{
         background-color: @wave-bg-color;
-        .spinner {
+        .ho-spinner {
             text-align: center;
             font-size: 10px;
             
@@ -127,7 +127,7 @@
 
     &.wandering-cubes{
         background-color: @wandering-cubes-bg-color;
-        .spinner{
+        .ho-spinner{
             &:before,
             &:after{
                 content: '';
@@ -166,7 +166,7 @@
 
     &.pulse{
         background-color: @pulse-bg-color;
-        .spinner {
+        .ho-spinner {
             background-color: @black;
             border-radius: 100%;
             animation: pulse 1.0s infinite ease-in-out;
@@ -185,7 +185,7 @@
 
     &.chasing-dots{
         background-color: @chasing-dots-bg-color;
-        .spinner {
+        .ho-spinner {
             text-align: center;
             animation: chasing-dots-rotate 2.0s infinite linear;
             .dot1,
@@ -225,7 +225,7 @@
 
     &.three-bounce{
         background-color: @three-bounce-bg-color;
-        .spinner {
+        .ho-spinner {
             text-align: center;
             > div {
                 width: 18px;
@@ -316,7 +316,7 @@
 
     &.cube-wrapper{
         background-color: @cube-wrapper-bg-color;
-        .spinner {
+        .ho-spinner {
              width: 50px;
              height: 50px;
             .cube {
@@ -327,7 +327,7 @@
                 animation: cube-wrapper-scale-delay 1.3s infinite ease-in-out;
             }
             /* 
-             * Spinner positions
+             * ho-spinner positions
              * 1 2 3 
              * 4 5 6
              * 7 8 9
@@ -351,7 +351,7 @@
 
     &.wordpress{
         background-color: @wordpress-bg-color;
-        .spinner {
+        .ho-spinner {
             width: 50px;
             height: 50px;
             background: @white;

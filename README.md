@@ -1,4 +1,4 @@
-# loading-indicator ![](http://img.shields.io/badge/bower_module-v1.0.2-green.svg) #
+# loading-indicator ![](http://img.shields.io/badge/bower_module-v1.0.3-green.svg) #
 =================
 
 A simple loading indicator, and it is inspired by [tobiasahlin](https://github.com/tobiasahlin)'s [SpinKit](https://github.com/tobiasahlin/SpinKit).

@@ -34,7 +34,7 @@
         $bounce2Div.setAttribute('class', 'double-bounce2');
 
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
         $spinnerDiv.appendChild($bounce1Div);
         $spinnerDiv.appendChild($bounce2Div);
 
@@ -47,7 +47,7 @@
 
     var createRotatingPlane = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         $loadingMaskDiv = document.createElement('div');
         $loadingMaskDiv.setAttribute('class', 'loading-mask rotating-plane');
@@ -58,7 +58,7 @@
 
     var createWave = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
         for (var i = 1; i <= 5; i++) {
             var $rect = document.createElement('div');
             $rect.setAttribute('class', 'rect' + i);
@@ -74,7 +74,7 @@
 
     var createWanderingCubes = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         $loadingMaskDiv = document.createElement('div');
         $loadingMaskDiv.setAttribute('class', 'loading-mask wandering-cubes');
@@ -85,7 +85,7 @@
 
     var createPulse = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         $loadingMaskDiv = document.createElement('div');
         $loadingMaskDiv.setAttribute('class', 'loading-mask pulse');
@@ -96,7 +96,7 @@
 
     var createChasingDots = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         for (var i = 1; i <= 2; i++) {
             var $dot = document.createElement('div');
@@ -113,7 +113,7 @@
 
     var createThreeBounce = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         for (var i = 1; i <= 3; i++) {
             var $bounce = document.createElement('div');
@@ -130,7 +130,7 @@
 
     var createCircle = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         for (var i = 1; i <= 12; i++) {
             var $circle = document.createElement('div');
@@ -147,7 +147,7 @@
 
     var createCubeGrid = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         for (var i = 1; i <= 9; i++) {
             var $cube = document.createElement('div');
@@ -164,7 +164,7 @@
 
     var createWordPress = function() {
         var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'spinner');
+        $spinnerDiv.setAttribute('class', 'ho-spinner');
 
         var $innerCircle = document.createElement('div');
         $innerCircle.setAttribute('class', 'inner-circle');
@@ -227,7 +227,7 @@
     var _isRunning = false;
 
     var Loading = {};
-    Loading.version = '1.0.2';
+    Loading.version = '1.0.3';
 
     Loading.enable = function(theme, timeout) {
         var _this = this;
