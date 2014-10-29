@@ -1,7 +1,7 @@
 # loading-indicator ![](http://img.shields.io/badge/bower_module-v1.0.0-green.svg) #
 =================
 
-A simple loading indicator
+A simple loading indicator, and it is inspired by [tobiasahlin](https://github.com/tobiasahlin)'s [SpinKit](https://github.com/tobiasahlin/SpinKit).
 
 > It's not splash-screen. So do not use it before `body` get initialized.
 
