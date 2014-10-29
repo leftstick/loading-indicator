@@ -1,8 +1,14 @@
 {
   "name": "loading-indicator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/leftstick/loading-indicator",
   "description": "a simple loading indicator",
+  "main": [
+    "dist/loading.js",
+    "dist/loading.min.css",
+    "dist/loading.min.js",
+    "dist/loading.min.map"
+  ],
   "keywords": [
     "loading",
     "indicator",
