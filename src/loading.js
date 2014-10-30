@@ -27,154 +27,101 @@
         }
     };
 
-    var createDoubleBounce = function() {
-        var $bounce1Div = document.createElement('div');
-        $bounce1Div.setAttribute('class', 'double-bounce1');
-        var $bounce2Div = document.createElement('div');
-        $bounce2Div.setAttribute('class', 'double-bounce2');
+    var createDivWithClass = function(cls) {
+        var $div = document.createElement('div');
+        $div.setAttribute('class', cls);
+        return $div;
+    };
 
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
+    var createLoadingMask = function(cls, spinner) {
+        $loadingMaskDiv = createDivWithClass('loading-mask ' + cls);
+        if (spinner) {
+            $loadingMaskDiv.appendChild(spinner);
+        }
+
+        $body.appendChild($loadingMaskDiv);
+    };
+
+    var createDoubleBounce = function() {
+        var $bounce1Div = createDivWithClass('double-bounce1');
+        var $bounce2Div = createDivWithClass('double-bounce2');
+
+        var $spinnerDiv = createDivWithClass('ho-spinner');
         $spinnerDiv.appendChild($bounce1Div);
         $spinnerDiv.appendChild($bounce2Div);
 
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask double-bounce');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('double-bounce', $spinnerDiv);
     };
 
     var createRotatingPlane = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask rotating-plane');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('rotating-plane', $spinnerDiv);
     };
 
     var createWave = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
+        var $spinnerDiv = createDivWithClass('ho-spinner');
         for (var i = 1; i <= 5; i++) {
-            var $rect = document.createElement('div');
-            $rect.setAttribute('class', 'rect' + i);
+            var $rect = createDivWithClass('rect' + i);
             $spinnerDiv.appendChild($rect);
         }
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask wave');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('wave', $spinnerDiv);
     };
 
     var createWanderingCubes = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask wandering-cubes');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('wandering-cubes', $spinnerDiv);
     };
 
     var createPulse = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask pulse');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('pulse', $spinnerDiv);
     };
 
     var createChasingDots = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
+        var $spinnerDiv = createDivWithClass('ho-spinner');
 
         for (var i = 1; i <= 2; i++) {
-            var $dot = document.createElement('div');
-            $dot.setAttribute('class', 'dot' + i);
+            var $dot = createDivWithClass('dot' + i);
             $spinnerDiv.appendChild($dot);
         }
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask chasing-dots');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('chasing-dots', $spinnerDiv);
     };
 
     var createThreeBounce = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
+        var $spinnerDiv = createDivWithClass('ho-spinner');
 
         for (var i = 1; i <= 3; i++) {
-            var $bounce = document.createElement('div');
-            $bounce.setAttribute('class', 'bounce' + i);
+            var $bounce = createDivWithClass('bounce' + i);
             $spinnerDiv.appendChild($bounce);
         }
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask three-bounce');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('three-bounce', $spinnerDiv);
     };
 
     var createCircle = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
+        var $spinnerDiv = createDivWithClass('ho-spinner');
 
         for (var i = 1; i <= 12; i++) {
-            var $circle = document.createElement('div');
-            $circle.setAttribute('class', 'circle' + i + ' circle');
+            var $circle = createDivWithClass('circle' + i + ' circle');
             $spinnerDiv.appendChild($circle);
         }
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask circle-wrapper');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('circle-wrapper', $spinnerDiv);
     };
 
     var createCubeGrid = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
+        var $spinnerDiv = createDivWithClass('ho-spinner');
 
         for (var i = 1; i <= 9; i++) {
-            var $cube = document.createElement('div');
-            $cube.setAttribute('class', 'cube');
+            var $cube = createDivWithClass('cube');
             $spinnerDiv.appendChild($cube);
         }
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask cube-wrapper');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('cube-wrapper', $spinnerDiv);
     };
 
     var createWordPress = function() {
-        var $spinnerDiv = document.createElement('div');
-        $spinnerDiv.setAttribute('class', 'ho-spinner');
-
-        var $innerCircle = document.createElement('div');
-        $innerCircle.setAttribute('class', 'inner-circle');
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        var $innerCircle = createDivWithClass('inner-circle');
         $spinnerDiv.appendChild($innerCircle);
-
-        $loadingMaskDiv = document.createElement('div');
-        $loadingMaskDiv.setAttribute('class', 'loading-mask wordpress');
-        $loadingMaskDiv.appendChild($spinnerDiv);
-
-        $body.appendChild($loadingMaskDiv);
+        createLoadingMask('wordpress', $spinnerDiv);
     };
 
     var _THEMES = {
