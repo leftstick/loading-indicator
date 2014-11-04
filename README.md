@@ -56,7 +56,7 @@ The style of the indicator
 
 Type: `string`  
 Default: `double-bounce`  
-Available values: `double-bounce`, `rotating-plane`, `wave`, `wandering-cubes`, `pulse`, `chasing-dots`, `three-bounce`, `circle`, `cube-grid`, `wordpress`
+Available values: `double-bounce`, `rotating-plane`, `wave`, `wandering-cubes`, `pulse`, `chasing-dots`, `three-bounce`, `circle`, `cube-grid`, `wordpress`, `audio-wave`, `spinning-disc`, `circular-square`
 
 **timeout**
 
