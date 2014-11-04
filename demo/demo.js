@@ -41,4 +41,16 @@
         global.Loading.enable('wordpress', 3000);
     });
 
+    $('#audio-wave').on('click', function() {
+        global.Loading.enable('audio-wave', 3000);
+    });
+
+    $('#spinning-disc').on('click', function() {
+        global.Loading.enable('spinning-disc', 30000);
+    });
+
+    $('#circular-square').on('click', function() {
+        Loading.enable('circular-square', 30000);
+    });
+
 }($, window));

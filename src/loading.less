@@ -10,6 +10,9 @@
 @circle-wrapper-bg-color: #27ae60;
 @cube-wrapper-bg-color: @black;
 @wordpress-bg-color: @black;
+@audio-wave-bg-color: #D8D8D8;
+@spinning-disc-bg-color: @audio-wave-bg-color;
+@circular-square-bg-color: @audio-wave-bg-color;
 
 .loading-mask{
     position: fixed;
@@ -373,6 +376,95 @@
         @keyframes inner-circle {
           0% { transform: rotate(0);}
           100% { transform: rotate(360deg);}
+        }
+    }
+
+    &.audio-wave{
+        background-color: @audio-wave-bg-color;
+        .ho-spinner {
+            background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 25% 50%, linear-gradient(#9b59b6, #9b59b6) 50% 50%, linear-gradient(#9b59b6, #9b59b6) 75% 50%, linear-gradient(#9b59b6, #9b59b6) 100% 50%;
+            background-repeat: no-repeat;
+            background-size: 19% 10px, 19% 10px, 19% 10px, 19% 10px, 19% 10px;
+            animation: audio-wave 1.5s linear infinite;
+        }
+
+        @keyframes audio-wave {
+            25% {
+                background: linear-gradient(#3498db, #3498db) 0 50%, linear-gradient(#9b59b6, #9b59b6) 25% 50%, linear-gradient(#9b59b6, #9b59b6) 50% 50%, linear-gradient(#9b59b6, #9b59b6) 75% 50%, linear-gradient(#9b59b6, #9b59b6) 100% 50%;
+                background-repeat: no-repeat;
+                background-size: 19% 80px, 19% 10px, 19% 10px, 19% 10px, 19% 10px;
+            }
+            37.5% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#3498db, #3498db) 25% 50%, linear-gradient(#9b59b6, #9b59b6) 50% 50%, linear-gradient(#9b59b6, #9b59b6) 75% 50%, linear-gradient(#9b59b6, #9b59b6) 100% 50%;
+                background-repeat: no-repeat;
+                background-size: 19% 10px, 19% 80px, 19% 10px, 19% 10px, 19% 10px;
+            }
+            50% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 25% 50%, linear-gradient(#3498db, #3498db) 50% 50%, linear-gradient(#9b59b6, #9b59b6) 75% 50%, linear-gradient(#9b59b6, #9b59b6) 100% 50%;
+                background-repeat: no-repeat;
+                background-size: 19% 10px, 19% 10px, 19% 80px, 19% 10px, 19% 10px;
+            }
+            62.5% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 25% 50%, linear-gradient(#9b59b6, #9b59b6) 50% 50%, linear-gradient(#3498db, #3498db) 75% 50%, linear-gradient(#9b59b6, #9b59b6) 100% 50%;
+                background-repeat: no-repeat;
+                background-size: 19% 10px, 19% 10px, 19% 10px, 19% 80px, 19% 10px;
+            }
+            75% {
+                background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 25% 50%, linear-gradient(#9b59b6, #9b59b6) 50% 50%, linear-gradient(#9b59b6, #9b59b6) 75% 50%, linear-gradient(#3498db, #3498db) 100% 50%;
+                background-repeat: no-repeat;
+                background-size: 19% 10px, 19% 10px, 19% 10px, 19% 10px, 19% 80px;
+            }
+        }
+    }
+
+    &.spinning-disc{
+        background-color: @spinning-disc-bg-color;
+        .ho-spinner {
+            border: solid 0.5em #9b59b6;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #3498db;
+            background-clip: content-box;
+            animation: spin-disc 1.5s linear infinite;
+        }
+
+        @keyframes spin-disc {
+            50% {
+                border-top-color: #3498db;
+                border-bottom-color: #3498db;
+                background-color: #2ecc71;
+            }
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+    }
+
+    &.circular-square{
+        background-color: @circular-square-bg-color;
+        .ho-spinner {
+            width: 0;
+            height: 0;
+            box-shadow: -10px -10px 0 10px #9b59b6, 10px -10px 0 10px #9b59b6, -10px 10px 0 10px #9b59b6, 10px 10px 0 10px #9b59b6;
+            animation: circular-square 1.5s ease-in-out infinite;
+        }
+
+        @keyframes circular-square {
+            50% {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                transform: rotate(0.5turn);
+                box-shadow: -30px 0 0 #2ecc71, 30px 0 0 #e74c3c, -30px 0 0 #3498db, 30px 0 0 #f1c40f;
+            }
+            80%,
+            100% {
+                transform: rotate(1turn);
+            }
         }
     }
 }

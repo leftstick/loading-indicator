@@ -124,6 +124,21 @@
         createLoadingMask('wordpress', $spinnerDiv);
     };
 
+    var createAudioWave = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('audio-wave', $spinnerDiv);
+    };
+
+    var createSpinningDisc = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('spinning-disc', $spinnerDiv);
+    };
+
+    var createCircularSquare = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('circular-square', $spinnerDiv);
+    };
+
     var _THEMES = {
         'double-bounce': createDoubleBounce,
         'rotating-plane': createRotatingPlane,
@@ -134,7 +149,10 @@
         'three-bounce': createThreeBounce,
         'circle': createCircle,
         'cube-grid': createCubeGrid,
-        'wordpress': createWordPress
+        'wordpress': createWordPress,
+        'audio-wave': createAudioWave,
+        'spinning-disc': createSpinningDisc,
+        'circular-square': createCircularSquare
     };
 
     var $html = document.getElementsByTagName('html')[0];
@@ -174,7 +192,7 @@
     var _isRunning = false;
 
     var Loading = {};
-    Loading.version = '1.0.3';
+    Loading.version = '1.1.0';
 
     Loading.enable = function(theme, timeout) {
         var _this = this;
