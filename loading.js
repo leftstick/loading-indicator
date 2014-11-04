@@ -1,2 +1,227 @@
-!function(e,t){"use strict";"object"==typeof exports?module.exports=t():"function"==typeof define&&define.amd?define([],t):e.Loading=t()}(window,function(){"use strict";var e,t,n=function(){e&&v.removeChild(e)},d=function(){var t=document.createElement("div");t.setAttribute("class","double-bounce1");var n=document.createElement("div");n.setAttribute("class","double-bounce2");var d=document.createElement("div");d.setAttribute("class","ho-spinner"),d.appendChild(t),d.appendChild(n),e=document.createElement("div"),e.setAttribute("class","loading-mask double-bounce"),e.appendChild(d),v.appendChild(e)},i=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner"),e=document.createElement("div"),e.setAttribute("class","loading-mask rotating-plane"),e.appendChild(t),v.appendChild(e)},a=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner");for(var n=1;5>=n;n++){var d=document.createElement("div");d.setAttribute("class","rect"+n),t.appendChild(d)}e=document.createElement("div"),e.setAttribute("class","loading-mask wave"),e.appendChild(t),v.appendChild(e)},o=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner"),e=document.createElement("div"),e.setAttribute("class","loading-mask wandering-cubes"),e.appendChild(t),v.appendChild(e)},r=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner"),e=document.createElement("div"),e.setAttribute("class","loading-mask pulse"),e.appendChild(t),v.appendChild(e)},s=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner");for(var n=1;2>=n;n++){var d=document.createElement("div");d.setAttribute("class","dot"+n),t.appendChild(d)}e=document.createElement("div"),e.setAttribute("class","loading-mask chasing-dots"),e.appendChild(t),v.appendChild(e)},c=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner");for(var n=1;3>=n;n++){var d=document.createElement("div");d.setAttribute("class","bounce"+n),t.appendChild(d)}e=document.createElement("div"),e.setAttribute("class","loading-mask three-bounce"),e.appendChild(t),v.appendChild(e)},l=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner");for(var n=1;12>=n;n++){var d=document.createElement("div");d.setAttribute("class","circle"+n+" circle"),t.appendChild(d)}e=document.createElement("div"),e.setAttribute("class","loading-mask circle-wrapper"),e.appendChild(t),v.appendChild(e)},u=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner");for(var n=1;9>=n;n++){var d=document.createElement("div");d.setAttribute("class","cube"),t.appendChild(d)}e=document.createElement("div"),e.setAttribute("class","loading-mask cube-wrapper"),e.appendChild(t),v.appendChild(e)},m=function(){var t=document.createElement("div");t.setAttribute("class","ho-spinner");var n=document.createElement("div");n.setAttribute("class","inner-circle"),t.appendChild(n),e=document.createElement("div"),e.setAttribute("class","loading-mask wordpress"),e.appendChild(t),v.appendChild(e)},p={"double-bounce":d,"rotating-plane":i,wave:a,"wandering-cubes":o,pulse:r,"chasing-dots":s,"three-bounce":c,circle:l,"cube-grid":u,wordpress:m},v=(document.getElementsByTagName("html")[0],document.body),h=function(e){var t=e||window.event;t.preventDefault&&t.preventDefault(),t.returnValue=!1},b=function(){t=v.style.overflow,v.style.overflow="hidden",window.addEventListener&&(window.addEventListener("DOMMouseScroll",h,!1),window.addEventListener("touchstart",h,!1)),window.onmousewheel=document.onmousewheel=h,window.ontouchstart=document.ontouchstart=h},w=function(){v.style.overflow=t,window.removeEventListener&&(window.removeEventListener("DOMMouseScroll",h,!1),window.removeEventListener("touchstart",h,!1)),window.onmousewheel=document.onmousewheel=null,window.ontouchstart=document.ontouchstart=null},f=!1,E={};return E.version="1.0.3",E.enable=function(e,t){var n=this,d="double-bounce";return p[e]&&(d=e),f?void console.warn("loading mask already running"):(f=!0,p[d](),b(),void(t&&setTimeout(function(){n.destroy()},t)))},E.destroy=function(){f=!1,n(),w()},E});
-//# sourceMappingURL=loading.min.js.map
+/**
+ *
+ *  Usage:
+ *
+ *
+ *  @author Howard.Zuo
+ *  @date Oct 29, 2014
+ *
+ **/
+(function(global, factory) {
+    'use strict';
+
+    if (typeof exports === 'object') {
+        module.exports = factory();
+    } else if (typeof define === 'function' && define.amd) {
+        define([], factory);
+    } else {
+        global.Loading = factory();
+    }
+
+}(window, function() {
+    'use strict';
+
+    var removeLoadingMask = function() {
+        if ($loadingMaskDiv) {
+            $body.removeChild($loadingMaskDiv);
+        }
+    };
+
+    var createDivWithClass = function(cls) {
+        var $div = document.createElement('div');
+        $div.setAttribute('class', cls);
+        return $div;
+    };
+
+    var createLoadingMask = function(cls, spinner) {
+        $loadingMaskDiv = createDivWithClass('loading-mask ' + cls);
+        if (spinner) {
+            $loadingMaskDiv.appendChild(spinner);
+        }
+
+        $body.appendChild($loadingMaskDiv);
+    };
+
+    var createDoubleBounce = function() {
+        var $bounce1Div = createDivWithClass('double-bounce1');
+        var $bounce2Div = createDivWithClass('double-bounce2');
+
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        $spinnerDiv.appendChild($bounce1Div);
+        $spinnerDiv.appendChild($bounce2Div);
+
+        createLoadingMask('double-bounce', $spinnerDiv);
+    };
+
+    var createRotatingPlane = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('rotating-plane', $spinnerDiv);
+    };
+
+    var createWave = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        for (var i = 1; i <= 5; i++) {
+            var $rect = createDivWithClass('rect' + i);
+            $spinnerDiv.appendChild($rect);
+        }
+        createLoadingMask('wave', $spinnerDiv);
+    };
+
+    var createWanderingCubes = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('wandering-cubes', $spinnerDiv);
+    };
+
+    var createPulse = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('pulse', $spinnerDiv);
+    };
+
+    var createChasingDots = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+
+        for (var i = 1; i <= 2; i++) {
+            var $dot = createDivWithClass('dot' + i);
+            $spinnerDiv.appendChild($dot);
+        }
+        createLoadingMask('chasing-dots', $spinnerDiv);
+    };
+
+    var createThreeBounce = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+
+        for (var i = 1; i <= 3; i++) {
+            var $bounce = createDivWithClass('bounce' + i);
+            $spinnerDiv.appendChild($bounce);
+        }
+        createLoadingMask('three-bounce', $spinnerDiv);
+    };
+
+    var createCircle = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+
+        for (var i = 1; i <= 12; i++) {
+            var $circle = createDivWithClass('circle' + i + ' circle');
+            $spinnerDiv.appendChild($circle);
+        }
+        createLoadingMask('circle-wrapper', $spinnerDiv);
+    };
+
+    var createCubeGrid = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+
+        for (var i = 1; i <= 9; i++) {
+            var $cube = createDivWithClass('cube');
+            $spinnerDiv.appendChild($cube);
+        }
+        createLoadingMask('cube-wrapper', $spinnerDiv);
+    };
+
+    var createWordPress = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        var $innerCircle = createDivWithClass('inner-circle');
+        $spinnerDiv.appendChild($innerCircle);
+        createLoadingMask('wordpress', $spinnerDiv);
+    };
+
+    var createAudioWave = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('audio-wave', $spinnerDiv);
+    };
+
+    var createSpinningDisc = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('spinning-disc', $spinnerDiv);
+    };
+
+    var createCircularSquare = function() {
+        var $spinnerDiv = createDivWithClass('ho-spinner');
+        createLoadingMask('circular-square', $spinnerDiv);
+    };
+
+    var _THEMES = {
+        'double-bounce': createDoubleBounce,
+        'rotating-plane': createRotatingPlane,
+        'wave': createWave,
+        'wandering-cubes': createWanderingCubes,
+        'pulse': createPulse,
+        'chasing-dots': createChasingDots,
+        'three-bounce': createThreeBounce,
+        'circle': createCircle,
+        'cube-grid': createCubeGrid,
+        'wordpress': createWordPress,
+        'audio-wave': createAudioWave,
+        'spinning-disc': createSpinningDisc,
+        'circular-square': createCircularSquare
+    };
+
+    var $html = document.getElementsByTagName('html')[0];
+    var $body = document.body;
+    var $loadingMaskDiv;
+    var lastOverflow;
+
+    var wheel = function(e) {
+        var ex = e || window.event;
+        if (ex.preventDefault) {
+            ex.preventDefault();
+        }
+        ex.returnValue = false;
+    };
+
+    var disableScrollbar = function() {
+        lastOverflow = $body.style.overflow;
+        $body.style.overflow = 'hidden';
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', wheel, false);
+            window.addEventListener('touchstart', wheel, false);
+        }
+        window.onmousewheel = document.onmousewheel = wheel;
+        window.ontouchstart = document.ontouchstart = wheel;
+    };
+
+    var recoverScrollbar = function() {
+        $body.style.overflow = lastOverflow;
+        if (window.removeEventListener) {
+            window.removeEventListener('DOMMouseScroll', wheel, false);
+            window.removeEventListener('touchstart', wheel, false);
+        }
+        window.onmousewheel = document.onmousewheel = null;
+        window.ontouchstart = document.ontouchstart = null;
+    };
+
+    var _isRunning = false;
+
+    var Loading = {};
+    Loading.version = '1.1.0';
+
+    Loading.enable = function(theme, timeout) {
+        var _this = this;
+        var the = 'double-bounce';
+        if (_THEMES[theme]) {
+            the = theme;
+        }
+
+        if (_isRunning) {
+            console.warn('loading mask already running');
+            return;
+        }
+        _isRunning = true;
+
+        _THEMES[the]();
+        disableScrollbar();
+
+        if (timeout) {
+            setTimeout(function() {
+                _this.destroy();
+            }, timeout);
+        }
+    };
+
+    Loading.destroy = function() {
+        _isRunning = false;
+        removeLoadingMask();
+        recoverScrollbar();
+    };
+
+    return Loading;
+}));
